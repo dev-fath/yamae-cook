@@ -35,6 +35,14 @@ export const Secondary: Story = {
   },
 };
 
+export const Disabled: Story = {
+  args: {
+    primary: false,
+    label: 'Button',
+    disabled: true,
+  },
+};
+
 export const Large: Story = {
   args: {
     size: 'large',

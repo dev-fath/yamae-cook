@@ -22,6 +22,10 @@ interface ButtonProps {
    * Optional click handler
    */
   onClick?: () => void;
+  /**
+   * button is disabled
+   */
+  disabled?: boolean;
 }
 
 /**
@@ -32,14 +36,19 @@ export const Button = ({
   size = 'medium',
   backgroundColor,
   label,
+  disabled,
   ...props
 }: ButtonProps) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+  const mode = disabled
+    ? 'storybook-button--disabled'
+    : primary
+    ? 'storybook-button--primary'
+    : 'storybook-button--secondary';
   return (
     <button
       type="button"
       className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
-      {...props}
+      onClick={props.onClick}
     >
       {label}
       <style jsx>{`

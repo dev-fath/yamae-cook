@@ -7,15 +7,17 @@
   display: inline-block;
   line-height: 1;
 }
+
 .storybook-button--primary {
-  color: white;
-  background-color: #1ea7fd;
+  @apply bg-primary-900 text-white;
 }
 .storybook-button--secondary {
-  color: #333;
-  background-color: transparent;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+  @apply text-grayscale-900 bg-transparent border-1 border-grayscale-900 border-solid;
 }
+.storybook-button--disabled {
+  @apply text-grayscale-500 bg-grayscale-300 border-1 border-grayscale-300 border-solid;
+}
+
 .storybook-button--small {
   font-size: 12px;
   padding: 10px 16px;
